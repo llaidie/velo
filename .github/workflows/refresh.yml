@@ -1,0 +1,45 @@
+name: Construire le site
+
+on:
+  # chaque nuit a 04h30 UTC, pour rafraichir les chiffres intervals.icu
+  schedule:
+    - cron: "30 4 * * *"
+  # a chaque nouvel article ou modification du gabarit
+  push:
+    branches: [main]
+    paths:
+      - "content/**"
+      - "build/**"
+      - "assets/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Construire
+        env:
+          ICU_API_KEY: ${{ secrets.ICU_API_KEY }}
+          ICU_ATHLETE_ID: ${{ secrets.ICU_ATHLETE_ID }}
+        run: python3 build/build.py
+
+      - name: Commit si quelque chose a change
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Rien de nouveau."
+          else
+            git commit -m "Site reconstruit le $(date +%d/%m/%Y)"
+            git push
+          fi
