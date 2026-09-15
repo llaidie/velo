@@ -1,24 +1,26 @@
-<title>Le carnet</title>
+<title>{{TITLE}}</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="assets/site.css">
 
 <div class="wrap">
   <nav class="nav col">
     <a href="index.html">Mon histoire</a>
-    <a href="blog.html" aria-current="page">Le carnet</a>
+    <a href="blog.html">Le carnet</a>
     <a href="https://www.strava.com/athletes/170691" target="_blank" rel="noopener">Strava</a>
   </nav>
 
   <header class="art-head col">
-    <p class="eyebrow">Ludovic Laidié · ultra gravel</p>
-    <h1>Le carnet</h1>
-    <p class="standfirst">Ce que j'écris au jour le jour sur l'entraînement, le matériel et les courses. Tous les chiffres viennent de Strava et d'intervals.icu.</p>
+    <p class="eyebrow">{{THEME}} · {{DATE}}</p>
+    <h1>{{TITLE}}</h1>
+    <p class="standfirst">{{STANDFIRST}}</p>
   </header>
 
-{{THEMES}}
+  <article class="art-body col">
+{{BODY}}
+  </article>
 
   <section class="col" style="padding-block:34px 60px">
-    <a class="backlink" href="index.html">← De Honfleur aux Badlands</a>
+    <a class="backlink" href="blog.html">← Tous les articles</a>
   </section>
 </div>
 
@@ -26,7 +28,7 @@
   <div class="wrap">
     <div class="col">
       <a href="https://www.strava.com/athletes/170691" target="_blank" rel="noopener">Strava · /athletes/170691</a>
-      <p>Ludovic Laidié · Honfleur, Normandie · {{COUNT}} articles</p>
+      <p>Ludovic Laidié · Honfleur, Normandie</p>
     </div>
   </div>
 </footer>
