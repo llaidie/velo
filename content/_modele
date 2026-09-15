@@ -1,0 +1,19 @@
+---
+titre: Le titre de l'article
+date: 2026-09-20
+theme: Les données
+resume: Une phrase qui dit de quoi ça parle. Elle s'affiche dans le sommaire et sous le titre.
+slug: mon-article
+Le texte du post, tel quel. Une ligne vide sépare deux paragraphes.
+Un intertitre si l'article est long
+Les chiffres peuvent être mis en avant avec des accents graves : `150 W`, `74 L/min`.
+Pour du gras, deux étoiles. Pour une liste :
+première ligne
+deuxième ligne
+Une citation mise en valeur commence par un chevron.
+> Je ne roule pas à outrance, je roule à l'envie.
+Thématiques disponibles, à recopier telles quelles dans le champ theme :
+Les données, Le matériel, La course, La nutrition, Le récit.
+Le champ slug donne l'adresse de la page (mon-article.html). Une fois publié,
+ne plus le changer : les liens déjà partagés cesseraient de fonctionner.
+Ce fichier commence par un tiret bas, il est ignoré par le générateur.
